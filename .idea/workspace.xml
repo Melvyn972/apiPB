@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf1403b2-f335-4033-82b3-027b592fe8c4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Service/EquadisService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/equadis/gtins.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/equadis/product_details.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+    <list default="true" id="cf1403b2-f335-4033-82b3-027b592fe8c4" name="Changes" comment="initial">
+      <change beforePath="$PROJECT_DIR$/src/Service/EquadisService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/EquadisService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +19,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Melvyn972"
+  }
+}]]></component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/Melvyn972/apiPB",
@@ -238,11 +238,24 @@
       <workItem from="1730387944099" duration="224000" />
       <workItem from="1730389019215" duration="1661000" />
       <workItem from="1731398509612" duration="601000" />
-      <workItem from="1731400870688" duration="20472000" />
+      <workItem from="1731400870688" duration="20591000" />
     </task>
+    <task id="LOCAL-00001" summary="initial">
+      <option name="closed" value="true" />
+      <created>1731426733307</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731426733307</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial" />
   </component>
 </project>

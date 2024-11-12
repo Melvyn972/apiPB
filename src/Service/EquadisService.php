@@ -11,7 +11,7 @@ class EquadisService
     private $client;
     private $sessionCookie;
     private $keyMapping = [
-        /*"1" => "Type d'unité commerciale",
+        "1" => "Type d'unité commerciale",
         "10" => "Catégorie de produits",
         "101" => "Gamme de produit",
         "102" => "Dénomination de vente",
@@ -37,9 +37,9 @@ class EquadisService
         "1082" => "Sigles/Accréditations marqués sur le packaging",
         "1083" => "Langues imprimées sur emballage",
         "1086" => "Avertissement",
-        "1087" => "Label Spécifique France",*/
+        "1087" => "Label Spécifique France",
         "109" => "Marque",
-       /* "1092" => "Format de date",
+        "1092" => "Format de date",
         "1094" => "Date de production marquée sur l'emballage",
         "11" => "Brique GPC",
         "112" => "Sous-marque",
@@ -580,7 +580,7 @@ class EquadisService
         "UL5" => "Niveau logistique",
         "UL6" => "Article irrégulièrement emballé",
         "UL7" => "Nombre d'articles en profondeur",
-        "UL9" => "Nombre d'articles en largeur",*/
+        "UL9" => "Nombre d'articles en largeur",
     ];
 
     public function __construct(HttpClientInterface $client)
