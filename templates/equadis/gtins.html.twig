@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}GTINs à jour{% endblock %}
+
+{% block body %}
+    <h1>GTINs à jour</h1>
+    <h2><a href="{{ path('fetch_all_product_details') }}">Télécharger Exel de tous les produits</a></h2>
+
+    <ul>
+        {% for gtin in gtins %}
+            <li><a href="{{ path('fetch_product_details', { 'gtin': gtin }) }}">{{ gtin }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

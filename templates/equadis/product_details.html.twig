@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails GTIN{% endblock %}
+
+{% block body %}
+    <h1>Détails GTIN</h1>
+
+    <pre>
+        {{ product|json_encode(constant('JSON_PRETTY_PRINT')|raw) }}
+    </pre>
+{% endblock %}
