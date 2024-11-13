@@ -80,12 +80,12 @@ class EquadisController extends AbstractController
         }
 
         foreach ($productDetails as $rowIndex => $product) {
-            if (!is_array($product)) {
-                continue;
-            }
+            $rowIndex = (int)$rowIndex + 2;
             foreach ($headers as $columnIndex => $header) {
+
                 $value = $product[$header] ?? '';
-                $cellCoordinate = \PhpOffice\PhpSpreadsheet\Cell\Coordinate::stringFromColumnIndex((int)$columnIndex + 1) . (string)($rowIndex + 2);
+                $columnIndex = (int)$columnIndex + 1;
+                $cellCoordinate = \PhpOffice\PhpSpreadsheet\Cell\Coordinate::stringFromColumnIndex($columnIndex) . $rowIndex;
                 $sheet->setCellValue($cellCoordinate, is_array($value) ? json_encode($value) : (string)$value);
             }
         }
