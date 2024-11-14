@@ -3,9 +3,11 @@
 {% block title %}Détails GTIN{% endblock %}
 
 {% block body %}
-    <h1>Détails GTIN</h1>
+    <div class="container mt-5">
+        <h1 class="mb-4">Détails GTIN</h1>
 
-    <pre>
-        {{ product|json_encode(constant('JSON_PRETTY_PRINT')|raw) }}
-    </pre>
+        <pre class="bg-light p-3">
+            {{ product|json_encode(constant('JSON_PRETTY_PRINT')|raw) }}
+        </pre>
+    </div>
 {% endblock %}

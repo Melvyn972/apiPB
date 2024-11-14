@@ -11,7 +11,7 @@ class EquadisService
     private $client;
     private $sessionCookie;
     private $keyMapping = [
-        "1" => "Type d'unité commerciale",
+       "1" => "Type d'unité commerciale",
         "10" => "Catégorie de produits",
         "101" => "Gamme de produit",
         "102" => "Dénomination de vente",
@@ -624,19 +624,25 @@ class EquadisService
     }
 
     public function getProducts(array $gtins): array
-    {
-        if (!$this->sessionCookie) {
-            throw new \Exception('Not authenticated');
-        }
+{
+    if (!$this->sessionCookie) {
+        throw new \Exception('Not authenticated');
+    }
 
+    $products = [];
+    $currentPage = 1;
+    $numberOfRowsPerPage = 100;
+    $totalPages = 1;
+
+    do {
         $response = $this->client->request('POST', 'https://api.equadis.com/EquadisRefonte/product/getProducts', [
             'headers' => [
                 'Cookie' => 'JSESSIONID=' . $this->sessionCookie,
             ],
             'json' => [
                 'paging' => [
-                    'currentPage' => '1',
-                    'numberOfRowsPerPage' => 100,
+                    'currentPage' => $currentPage,
+                    'numberOfRowsPerPage' => $numberOfRowsPerPage,
                 ],
                 'filters' => [
                     [
@@ -647,15 +653,22 @@ class EquadisService
             ],
         ]);
 
-        $products = $response->toArray();
-        return $this->translateKeys($products['paginglist'] ?? []);
-    }
+        $pageData = $response->toArray();
+        $products = array_merge($products, $this->translateKeys($pageData['paginglist'] ?? []));
+        $totalPages = $pageData['totalPages'] ?? 1;
+        $currentPage++;
+
+    } while ($currentPage <= $totalPages);
+
+    return $products;
+}
 
     private function translateKeys(array $data): array
     {
         $translated = [];
         foreach ($data as $key => $value) {
             $translatedKey = $this->keyMapping[$key] ?? $key;
+            error_log("Key: $key, Translated Key: $translatedKey"); // Ajoutez ceci pour voir les clés traduites
             if (is_array($value)) {
                 $translated[$translatedKey] = $this->translateKeys($value);
             } else {

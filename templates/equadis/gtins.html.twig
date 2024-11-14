@@ -3,12 +3,19 @@
 {% block title %}GTINs à jour{% endblock %}
 
 {% block body %}
-    <h1>GTINs à jour</h1>
-    <h2><a href="{{ path('fetch_all_product_details') }}">Télécharger Exel de tous les produits</a></h2>
+    <div class="container mt-5">
+        <h1 class="mb-4">GTINs à jour</h1>
+        <button class="btn btn-primary mb-3" onclick="window.location.href='{{ path('export_products') }}'">
+            Télécharger en Excel tous les produits
+        </button>
+        <button class="btn btn-secondary mb-3" onclick="window.location.href='{{ path('export_products2') }}'">
+            Télécharger en Excel les produits filtrés
+        </button>
 
-    <ul>
-        {% for gtin in gtins %}
-            <li><a href="{{ path('fetch_product_details', { 'gtin': gtin }) }}">{{ gtin }}</a></li>
-        {% endfor %}
-    </ul>
+        <ul class="list-group">
+            {% for gtin in gtins %}
+                <li class="list-group-item"><a href="{{ path('fetch_product_details', { 'gtin': gtin }) }}">{{ gtin }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock %}
